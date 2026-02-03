@@ -70,27 +70,6 @@ class ErrorBoundary extends React.Component<Props, State> {
               We encountered an unexpected error while loading this page.
             </p>
 
-            {/* Error Details (Development Only) */}
-            {process.env.NODE_ENV === 'development' && this.state.error && (
-              <div className="bg-neutral-900/50 border border-red-500/30 rounded-lg p-4 mb-8 text-left">
-                <p className="text-xs uppercase tracking-widest font-bold text-red-400 mb-2">Error Details:</p>
-                <p className="text-xs text-neutral-300 font-mono break-words">
-                  {this.state.error.message || this.state.error.toString()}
-                </p>
-                {this.state.error.stack && (
-                  <pre className="text-xs text-neutral-500 mt-4 overflow-auto max-h-40">
-                    {this.state.error.stack}
-                  </pre>
-                )}
-                {this.state.errorInfo && (
-                  <details className="text-xs text-neutral-600 mt-4">
-                    <summary className="cursor-pointer hover:text-neutral-500">Component Stack</summary>
-                    <pre className="overflow-auto max-h-40 mt-2">{this.state.errorInfo}</pre>
-                  </details>
-                )}
-              </div>
-            )}
-
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
